@@ -8,6 +8,11 @@
         <div class="col-12">
             <h1 class="mt-3">Cultural Places</h1>
             <a href="/places/create" class="btn btn-primary my-3">Add Cultural Place</a>
+
+            @if (session('status'))
+            <div class="alert alert-success">{{ session('status') }}</div>
+            @endif
+
             <div class="table-responsive-lg">
                 <table class="table table-hover">
                     <thead class="thead-dark">

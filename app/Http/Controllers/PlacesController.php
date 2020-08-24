@@ -41,14 +41,25 @@ class PlacesController extends Controller
      */
     public function store(Request $request)
     {
-        $place = new Place;
-        $place->name = $request->name;
-        $place->city = $request->city;
-        $place->postalCode = $request->postalCode;
+        // $place = new Place;
+        // $place->name = $request->name;
+        // $place->city = $request->city;
+        // $place->postalCode = $request->postalCode;
 
-        $place->save();
+        // $place->save();
 
-        return redirect('/places');
+        // If mass assignment happen
+        // Place::create([
+        //     'name' => $request->name,
+        //     'city' => $request->city,
+        //     'postalCode' => $request->postalCode
+        // ]);
+
+        // Shorten code
+        Place::create($request->all());
+
+        // Redirect with flashed session data
+        return redirect('/places')->with('status', 'Cultural Places Added!');
     }
 
     /**

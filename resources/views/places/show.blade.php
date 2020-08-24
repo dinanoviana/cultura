@@ -13,6 +13,10 @@
                     <h5 class="card-title">{{ $place->name }}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{ $place->city }}</h6>
                     <p class="card-text">{{ $place->postalCode }}</p>
+
+                    <button type="button" class="btn btn-primary">Edit</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                    <a href="/places" class="card-link">Back</a>
                 </div>
             </div>
 

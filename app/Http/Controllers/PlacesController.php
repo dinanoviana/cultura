@@ -55,6 +55,12 @@ class PlacesController extends Controller
         //     'postalCode' => $request->postalCode
         // ]);
 
+        $request->validate([
+            'name' => 'required',
+            'city' => 'required',
+            'postalCode' => 'required|size:5'
+        ]);
+
         // Shorten code
         Place::create($request->all());
 

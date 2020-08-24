@@ -12,15 +12,24 @@
                 @csrf
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter cultural place's name" name="name">
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Enter cultural place's name" name="name">
+                    @error('name')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="city">City</label>
-                    <input type="text" class="form-control" id="city" placeholder="Enter city" name="city">
+                    <input type="text" class="form-control @error('city') is-invalid @enderror" id="city" placeholder="Enter city" name="city">
+                    @error('city')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="postalCode">Postal Code</label>
-                    <input type="text" class="form-control" id="postalCode" placeholder="Enter postal code" name="postalCode">
+                    <input type="text" class="form-control @error('postalCode') is-invalid @enderror" id="postalCode" placeholder="Enter postal code" name="postalCode">
+                    @error('postalCode')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
                 <button type="submit" class="btn btn-primary">Add</button>
             </form>

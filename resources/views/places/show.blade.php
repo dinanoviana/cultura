@@ -1,6 +1,6 @@
 @extends('layout/main')
 
-@section('title', 'Places')
+@section('title', 'Detail Cultural Places')
 
 @section('container')
 <div class="container">

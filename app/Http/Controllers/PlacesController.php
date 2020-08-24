@@ -30,7 +30,7 @@ class PlacesController extends Controller
      */
     public function create()
     {
-        //
+        return view('places/create');
     }
 
     /**

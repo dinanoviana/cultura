@@ -41,7 +41,14 @@ class PlacesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $place = new Place;
+        $place->name = $request->name;
+        $place->city = $request->city;
+        $place->postalCode = $request->postalCode;
+
+        $place->save();
+
+        return redirect('/places');
     }
 
     /**

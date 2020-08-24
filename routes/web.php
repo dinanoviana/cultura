@@ -24,8 +24,13 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/url', 'ControllerName@MethodName');
 
 Route::get('/', 'PagesController@home');
+Route::get('/about', 'PagesController@about');
+
+// Events
 Route::get('/events', 'EventsController@index');
+
+// Places
 Route::get('/places', 'PlacesController@index');
 Route::get('/places/create', 'PlacesController@create');
 Route::get('/places/{place}', 'PlacesController@show');
-Route::get('/about', 'PagesController@about');
+Route::post('/places', 'PlacesController@store');

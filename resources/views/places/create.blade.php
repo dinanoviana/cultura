@@ -5,10 +5,11 @@
 @section('container')
 <div class="container">
     <div class="row">
-        <div class="col-8">
+        <div class="col-6">
             <h1 class="mt-3">Add Cultural Place</h1>
 
             <form method="POST" action="/places">
+                @csrf
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" placeholder="Enter cultural place's name" name="name">

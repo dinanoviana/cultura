@@ -21,7 +21,7 @@
                         @foreach($places as $pl)
                         <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
-                            <td><a href="">{{ $pl->name }}</a></td>
+                            <td><a href="/places/{{ $pl->id }}">{{ $pl->name }}</a></td>
                             <td>{{ $pl->city }}</td>
                             <td>{{ $pl->postalCode }}</td>
                         </tr>

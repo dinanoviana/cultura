@@ -20,7 +20,7 @@ class PlacesController extends Controller
 
         // Use Eloquent ORM (Object Relational Model)
         $places = Place::all();
-        return view('places', ['places' => $places]);
+        return view('places/index', ['places' => $places]);
     }
 
     /**
@@ -50,9 +50,9 @@ class PlacesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Place $place)
     {
-        //
+        return view('places/show', compact('place'));
     }
 
     /**

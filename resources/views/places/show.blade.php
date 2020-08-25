@@ -15,7 +15,13 @@
                     <p class="card-text">{{ $place->postalCode }}</p>
 
                     <button type="button" class="btn btn-primary">Edit</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
+
+                    <form action="{{ $place->id }}" method="POST" class="d-inline">
+                        @method('delete');
+                        @csrf
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </form>
+
                     <a href="/places" class="card-link">Back</a>
                 </div>
             </div>

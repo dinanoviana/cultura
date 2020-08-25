@@ -71,7 +71,7 @@ class PlacesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Place  $place
      * @return \Illuminate\Http\Response
      */
     public function show(Place $place)
@@ -105,11 +105,12 @@ class PlacesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Place  $place
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Place $place)
     {
-        //
+        Place::destroy($place->id);
+        return redirect('/places')->with('status', 'Cultural Places Deleted!');
     }
 }

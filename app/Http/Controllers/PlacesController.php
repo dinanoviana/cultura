@@ -84,9 +84,9 @@ class PlacesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Place $place)
     {
-        //
+        return view('places/edit', compact('place'));
     }
 
     /**
@@ -96,9 +96,20 @@ class PlacesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Place $place)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'city' => 'required',
+            'postalCode' => 'required|size:5'
+        ]);
+
+        Place::where('id', $place->id)->update([
+            'name' => $request->name,
+            'city' => $request->city,
+            'postalCode' => $request->postalCode
+        ]);
+        return redirect('/places')->with('status', 'Cultural Place Updated!');
     }
 
     /**

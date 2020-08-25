@@ -14,9 +14,9 @@
                     <h6 class="card-subtitle mb-2 text-muted">{{ $place->city }}</h6>
                     <p class="card-text">{{ $place->postalCode }}</p>
 
-                    <button type="button" class="btn btn-primary">Edit</button>
+                    <a href="{{ $place->id }}/edit" class="btn btn-primary">Edit</a>
 
-                    <form method="POST" action="{{ $place->id }}" class="d-inline">
+                    <form method="POST" action="/places/{{ $place->id }}" class="d-inline">
                         @method('delete')
                         @csrf
                         <button type="button" class="btn btn-danger">Delete</button>

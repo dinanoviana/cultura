@@ -30,8 +30,13 @@ Route::get('/about', 'PagesController@about');
 Route::get('/events', 'EventsController@index');
 
 // Places
-Route::get('/places', 'PlacesController@index');
-Route::get('/places/create', 'PlacesController@create');
-Route::get('/places/{place}', 'PlacesController@show');
-Route::post('/places', 'PlacesController@store');
-Route::delete('/places/{place}', 'PlacesController@destroy');
+// Route::get('/places', 'PlacesController@index');
+// Route::get('/places/create', 'PlacesController@create');
+// Route::get('/places/{place}', 'PlacesController@show');
+// Route::post('/places', 'PlacesController@store');
+// Route::delete('/places/{place}', 'PlacesController@destroy');
+// Route::get('/places/{place}/edit', 'PlacesController@edit');
+// Route::patch('/places/{place}', 'PlacesController@update');
+
+// Places shorten route
+Route::resource('places', 'PlacesController');

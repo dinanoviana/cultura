@@ -34,4 +34,4 @@ Route::get('/places', 'PlacesController@index');
 Route::get('/places/create', 'PlacesController@create');
 Route::get('/places/{place}', 'PlacesController@show');
 Route::post('/places', 'PlacesController@store');
-Route::post('/places/{place}', 'PlacesController@destroy');
+Route::delete('/places/{place}', 'PlacesController@destroy');

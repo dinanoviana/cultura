@@ -1,12 +1,12 @@
 @extends('layout/main')
 
-@section('title', 'Detail Cultural Places')
+@section('title', 'Detail Cultural Place')
 
 @section('container')
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1 class="mt-3">Detail Cultural Places</h1>
+            <h1 class="mt-3">Detail Cultural Place</h1>
 
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
@@ -16,8 +16,8 @@
 
                     <button type="button" class="btn btn-primary">Edit</button>
 
-                    <form action="{{ $place->id }}" method="POST" class="d-inline">
-                        @method('delete');
+                    <form method="POST" action="{{ $place->id }}" class="d-inline">
+                        @method('delete')
                         @csrf
                         <button type="button" class="btn btn-danger">Delete</button>
                     </form>

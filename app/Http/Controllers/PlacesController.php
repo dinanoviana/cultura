@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Place;
+use Illuminate\Http\Request;
 
 class PlacesController extends Controller
 {
@@ -65,13 +64,13 @@ class PlacesController extends Controller
         Place::create($request->all());
 
         // Redirect with flashed session data
-        return redirect('/places')->with('status', 'Cultural Places Added!');
+        return redirect('/places')->with('status', 'Cultural Place Added!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Place  $place
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show(Place $place)
@@ -105,12 +104,12 @@ class PlacesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Place  $place
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Place $place)
     {
         Place::destroy($place->id);
-        return redirect('/places')->with('status', 'Cultural Places Deleted!');
+        return redirect('/places')->with('status', 'Cultural Place Deleted!');
     }
 }
